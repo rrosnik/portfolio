@@ -1,9 +1,15 @@
+import Hero from "./sections/Hero";
+import ShowcaseSection from "./sections/ShowcaseSection";
+
 const App = () => {
-  return <main>
-    <div>
-        <h1>Welcom</h1>
-    </div>
-  </main>;
+  return (
+    <main>
+      <>
+        <Hero />
+        <ShowcaseSection />
+      </>
+    </main>
+  );
 };
 
 export default App;
