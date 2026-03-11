@@ -29,7 +29,7 @@ const Hero = () => {
       </div>
       <div className="hero-layout">
         {/* LEFT: Hero content */}
-        <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5 z-10">
+        <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5 z-10 pointer-events-none select-none">
           <div className="flex flex-col gap-7">
             <div className="hero-text">
               <h1>

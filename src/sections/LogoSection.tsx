@@ -9,7 +9,7 @@ const LogoIcon = ({ icon }: { icon: (typeof logoIconsList)[number] }) => {
 };
 const LogoSection = () => {
   return (
-    <div className="md:my-20">
+    <div className="md:my-20 my-10 relative">
       <div className="gradient-edge"></div>
       <div className="gradient-edge"></div>
 

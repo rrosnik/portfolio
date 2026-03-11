@@ -23,7 +23,7 @@ const Button: React.FC<ButtonProps> = ({ className, text, id }) => {
         }
       }}
       id={id}
-      className={`${className ?? ""} cta-wrapper`}
+      className={`${className ?? ""} cta-wrapper pointer-events-auto`}
     >
       <div className="cta-button group">
         <div className="bg-circle"></div>
