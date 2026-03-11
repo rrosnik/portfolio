@@ -56,12 +56,12 @@ const Hero = () => {
               <h1>into Real Project</h1>
               <h1>that Deliver Result</h1>
 
-              <p className="text-white-50 md:text-xl relative z-10">
+              <p className="text-white-50 text-lg md:text-xl relative z-10 my-4">
                 Hi, I'm Reza, a developer based in Canada with a passion for
                 code.
               </p>
               <Button
-                className="md:w-80 md:h-16 w-60 h-12 z-100"
+                className="md:w-80 md:h-16 w-60 h-12 z-100 text-sm"
                 id="button"
                 text="See my Work"
               />
