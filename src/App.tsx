@@ -1,3 +1,4 @@
+import ContactSection from "./sections/ContactSection";
 import Experience from "./sections/Experience";
 import FeatureCards from "./sections/FeatureCards";
 import Hero from "./sections/Hero";
@@ -5,7 +6,7 @@ import LogoSection from "./sections/LogoSection";
 import Navbar from "./sections/Navbar";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import TechStack from "./sections/TechStack";
-import Testimonials from './sections/Testimonials';
+import Testimonials from "./sections/Testimonials";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Experience />
         <TechStack />
         <Testimonials />
+        <ContactSection />
       </>
     </main>
   );
