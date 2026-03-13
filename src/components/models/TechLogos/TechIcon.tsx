@@ -25,7 +25,7 @@ const TechIcon: React.FC<TechIconProps> = ({ model }) => {
         }
       });
     }
-  }, [scene]);
+  }, [model.name, scene]);
 
   return (
     <Canvas>
@@ -35,6 +35,7 @@ const TechIcon: React.FC<TechIconProps> = ({ model }) => {
 
       <OrbitControls enableZoom={false} />
       <Float speed={5.5} rotationIntensity={0.5} floatIntensity={0.9}>
+        {/* @ts-expect-error: does not recognize */}
         <group scale={model.scale} rotation={model.rotation}>
           <primitive object={scene.scene} />
         </group>
