@@ -1,6 +1,8 @@
-# Documentation
+# Portfolio
 
-## Showing glb files in this portfolio
+## How I have shown glb files (3D models) in this portfolio
 
-- optimize any model using for instance blender to make it more organized and have less mesh (triangles)
-- convert it to jsx/tsx using gltfjsx package
+- downloaded them from **[sketchfab.com](https://sketchfab.com)**
+- optimized some of them using blender to make the 3D model objects more organized and have less mesh (triangles)
+- converted them to jsx using gltfjsx package
+- used **[react-three-fiber](https://github.com/pmndrs/react-three-fiber)** to render 3D models which uses **[three.js](https://github.com/mrdoob/three.js/)** package behind the scene:
