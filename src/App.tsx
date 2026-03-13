@@ -1,6 +1,7 @@
 import ContactSection from "./sections/ContactSection";
 import Experience from "./sections/Experience";
 import FeatureCards from "./sections/FeatureCards";
+import Footer from "./sections/Footer";
 import Hero from "./sections/Hero";
 import LogoSection from "./sections/LogoSection";
 import Navbar from "./sections/Navbar";
@@ -21,6 +22,7 @@ const App = () => {
         <TechStack />
         <Testimonials />
         <ContactSection />
+        <Footer />
       </>
     </main>
   );

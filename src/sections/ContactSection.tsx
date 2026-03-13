@@ -44,19 +44,17 @@ const ContactSection = () => {
       );
       // show our custom confirmation toast component
       toast(<ContactFormConfirmation name={formData.name} />);
+      // Reset Form after submission
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
     } catch (error) {
       console.error("EmailJS Error", error);
     } finally {
       setLoading(false);
     }
-
-    console.log("Form Submitted:", formData);
-    // Reset Form after submission
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
   };
 
   return (
