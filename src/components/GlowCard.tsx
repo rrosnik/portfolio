@@ -7,12 +7,14 @@ type GlowCardProps = {
     review: string;
   };
   index: number;
+  showRating?: boolean;
 };
 
 const GlowCard: React.FC<React.PropsWithChildren<GlowCardProps>> = ({
   children,
   card,
   index,
+  showRating = true,
 }) => {
   const cardRef = useRef<Array<HTMLDivElement>>([]);
 
@@ -44,11 +46,18 @@ const GlowCard: React.FC<React.PropsWithChildren<GlowCardProps>> = ({
     >
       <div className="glow" />
 
-      <div className="flex items-center gap-1 mb-5">
-        {Array.from({ length: 5 }, (_, i) => (
-          <img src="/images/star.png" key={i} alt="star" className="size-5" />
-        ))}
-      </div>
+      {showRating && (
+        <div className="flex items-center gap-1 mb-5">
+          {Array.from({ length: 5 }, (_, i) => (
+            <img
+              src="/images/star.png"
+              key={i}
+              alt="star"
+              className="size-5"
+            />
+          ))}
+        </div>
+      )}
       <div className="mb-5">
         <p className="text-white-50 text-lg">{card.review}</p>
       </div>

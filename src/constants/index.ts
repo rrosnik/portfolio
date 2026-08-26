@@ -12,8 +12,8 @@ const navLinks = [
     link: "#skills",
   },
   {
-    name: "Testimonials",
-    link: "#testimonials",
+    name: "Contact",
+    link: "#contact",
   },
 ];
 
@@ -89,56 +89,21 @@ const abilities = [
   },
 ];
 
-const techStackImgs = [
-  {
-    name: "React Developer",
-    imgPath: "/images/logos/react.png",
-  },
-  {
-    name: "Python Developer",
-    imgPath: "/images/logos/python.svg",
-  },
-  {
-    name: "Backend Developer",
-    imgPath: "/images/logos/node.png",
-  },
-  {
-    name: "Interactive Developer",
-    imgPath: "/images/logos/three.png",
-  },
-  {
-    name: "Project Manager",
-    imgPath: "/images/logos/git.svg",
-  },
-];
-
 const techStackIcons = [
   {
-    name: "React Developer",
+    name: "React",
     modelPath: "/models/react_logo-transformed.glb",
     scale: 1,
     rotation: [0, 0, 0],
   },
   {
-    name: "Python Developer",
-    modelPath: "/models/python-transformed.glb",
-    scale: 0.8,
-    rotation: [0, 0, 0],
-  },
-  {
-    name: "Backend Developer",
+    name: "Node.js",
     modelPath: "/models/node-transformed.glb",
     scale: 5,
     rotation: [0, -Math.PI / 2, 0],
   },
   {
-    name: "Interactive Developer",
-    modelPath: "/models/three.js-transformed.glb",
-    scale: 0.05,
-    rotation: [0, 0, 0],
-  },
-  {
-    name: "Project Manager",
+    name: "Git",
     modelPath: "/models/git-svg-transformed.glb",
     scale: 0.05,
     rotation: [0, -Math.PI / 4, 0],
@@ -148,41 +113,42 @@ const techStackIcons = [
 const expCards = [
   {
     review:
-      "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
+      "Designed and delivered a production BIM–LCA platform for the National Research Council Canada, owning architecture, implementation, and deployment across the full stack.",
     imgPath: "/images/exp1.png",
     logoPath: "/images/logo1.png",
-    title: "Frontend Developer",
-    date: "January 2023 - Present",
+    title: "Full-Stack Developer (Research) — University of Ottawa",
+    date: "May 2023 - Dec 2025",
     responsibilities: [
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
+      "Built a React front end with Redux Toolkit and Emotion, plus a production-grade component workflow using Storybook and MSW for realistic API mocking.",
+      "Architected an event-driven microservices ecosystem (Node.js, Python, Java) using gRPC for service-to-service communication and RabbitMQ for asynchronous messaging.",
+      "Structured the codebase as a scalable Nx monorepo with shared libraries, including a centralized Zod validation package enforcing consistent schemas across services.",
+      "Implemented background processing with Redis and containerized all services with Docker and Dev Containers for reproducible environments.",
+      "Secured the platform with OAuth 2.0 / OpenID Connect and a KMS, and built an API gateway handling routing, HTTPS/TLS, and streaming for large file transfers.",
     ],
   },
   {
     review:
-      "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
+      "Led development of a new web application from 10% to 55% completion after joining, mentoring junior developers and providing technical guidance through code reviews.",
     imgPath: "/images/exp2.png",
     logoPath: "/images/logo2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+    title: "Full-Stack Developer — Viratarhe Farda Co.",
+    date: "Jan 2022 - Aug 2022",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
+      "Built the backend architecture using Laravel (PHP) and MySQL, designed and implemented RESTful APIs, and developed frontend components with React.js.",
+      "Established a CI/CD pipeline with GitLab CI/CD and managed version control and team collaboration in GitLab.",
+      "Dockerized applications for easier deployment and scaling, and automated configuration and deployment with Ansible.",
     ],
   },
   {
     review:
-      "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
+      "Built the backend architecture of a website from the ground up and delivered clean, well-tested frontend components for the tourism agency's public site.",
     imgPath: "/images/exp3.png",
     logoPath: "/images/logo3.png",
-    title: "React Native Developer",
-    date: "March 2019 - May 2020",
+    title: "Full-Stack Developer — Fotros Tourist Agency",
+    date: "Aug 2020 - Jan 2021",
     responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
+      "Built the backend architecture of a website using Laravel (PHP) and MySQL, and designed and implemented RESTful APIs.",
+      "Developed front-end components with HTML, CSS, and JavaScript, and conducted code reviews.",
     ],
   },
 ];
@@ -270,6 +236,116 @@ const socialImgs = [
   },
 ];
 
+export const projects: PortfolioProject[] = [
+  {
+    label: "Co Draft — Real-Time Collaborative Workspace",
+    description:
+      "A real-time collaborative workspace built with Next.js, TypeScript, Convex, Clerk, Liveblocks, and TipTap. It supports multiplayer document editing with live presence and cursors, shared whiteboards, rich text editing, authentication, and the ability to publish portfolio projects — all on a scalable, productivity-focused architecture.",
+    imageUrl: "/images/projects/CoDraft.png",
+    skills: [
+      "git",
+      "nextjs",
+      "typescript",
+      "tailwindcss",
+      "shadcn",
+      "clerk",
+      "convex",
+      "liveblocks",
+      "tiptap",
+      "eslint",
+      "zod",
+      "zustand",
+    ],
+    category: "Full Stack / Collaboration",
+    github: "https://github.com/rrosnik/co-draft",
+    liveDemo: "https://co-draft.rosnik.dev",
+  },
+  {
+    label: "Meet AI — AI-Powered Video Meeting Platform",
+    description:
+      "A full-stack AI meeting platform built with Next.js, TypeScript, PostgreSQL, Drizzle, Better Auth, Stream Video, Stream Chat, Inngest, and OpenAI. It supports authenticated users, custom AI meeting agents that join calls in real time, automatic recording and transcription, AI-generated meeting summaries, transcript review, post-meeting chat, searchable meeting management, and premium usage limits through Polar subscriptions.",
+    imageUrl: "/images/projects/meet-ai.png",
+    skills: [
+      "git",
+      "nextjs",
+      "react",
+      "typescript",
+      "tailwindcss",
+      "shadcn",
+      "stream",
+      "neon",
+      "drizzle",
+      "eslint",
+    ],
+    category: "Full Stack / AI SaaS",
+    github: "https://github.com/rrosnik/meet-ai",
+    liveDemo: "https://meet-ai.rosnik.dev",
+  },
+  {
+    label: "AI Resume Analyzer — Smart ATS Feedback for Your Resume",
+    description:
+      "An AI-powered resume analysis app built with React Router 7, React, TypeScript, and Puter. Upload a resume as a PDF, match it against a target job listing, and get an ATS compatibility score with tailored, actionable feedback. Uses browser-side PDF parsing and Puter for serverless authentication, file storage, and AI — with no backend server to manage.",
+    imageUrl: "/images/projects/ai-resume-analyzer.png",
+    skills: [
+      "git",
+      "docker",
+      "react",
+      "react-router",
+      "typescript",
+      "vite",
+      "tailwindcss",
+      "zustand",
+    ],
+    category: "AI / Full Stack",
+    github: "https://github.com/rrosnik/ai-resume-analyzer",
+    liveDemo: "https://puter.com/app/rosnik-ai-resume-analyzer",
+  },
+  {
+    label: "Acquisitions — Dockerized Node/Express REST API",
+    description:
+      "A production-ready REST API built with Node.js and Express, featuring JWT authentication with bcrypt, a clean layered architecture (routes, controllers, services, models, middleware, and validation), Drizzle ORM on Neon Postgres, and Zod request validation. Hardened with Arcjet rate limiting and bot protection plus Helmet and CORS, with structured Winston and Morgan logging. Fully Dockerized with multi-stage builds and Docker Compose — Neon Local for ephemeral branch databases in development and Neon Cloud in production — and tested with Jest and Supertest.",
+    imageUrl: "/images/projects/Acquisitions.jpg",
+    skills: [
+      "git",
+      "docker",
+      "nodejs",
+      "express",
+      "neon",
+      "drizzle",
+      "jwt",
+      "zod",
+      "arcjet",
+      "jest",
+      "nodemon",
+      "eslint",
+      "prettier",
+      "dotenv",
+    ],
+    category: "Backend / DevOps",
+    github: "https://github.com/rrosnik/acquisitions",
+    liveDemo: undefined,
+  },
+  {
+    label: "Recurrly — Subscription Tracker Mobile App",
+    description:
+      "A cross-platform mobile app built with React Native and Expo for tracking recurring subscriptions and payments. Features offline-first, on-device SQLite storage via Drizzle, Clerk authentication, a native UI built with NativeWind, TanStack Query for data fetching, and PostHog analytics — so you can see upcoming charges, renewal dates, and total spend at a glance.",
+    imageUrl: "/images/projects/recurrly.png",
+    skills: [
+      "git",
+      "react",
+      "typescript",
+      "tailwindcss",
+      "clerk",
+      "drizzle",
+      "zustand",
+      "zod",
+    ],
+    category: "Mobile / Full Stack",
+    github: "https://github.com/rrosnik/react-native-recurrly",
+    liveDemo: undefined,
+  },
+];
+
 export {
   words,
   abilities,
@@ -280,6 +356,5 @@ export {
   testimonials,
   socialImgs,
   techStackIcons,
-  techStackImgs,
   navLinks,
 };

@@ -1,4 +1,4 @@
-import AnimatedCounter from "../components/AnimatedCounter";
+// import AnimatedCounter from "../components/AnimatedCounter";
 import Button from "../components/Button";
 import HeroExperience from "../components/HeroModels/HeroExperience";
 import { words } from "../constants";
@@ -57,8 +57,8 @@ const Hero = () => {
               <h1>that Deliver Result</h1>
 
               <p className="text-white-50 text-lg md:text-xl relative z-10 my-4">
-                Hi, I'm Reza, a developer based in Canada with a passion for
-                code.
+                Hi, I'm Reza, a full-stack developer based in Ottawa, Canada,
+                building end-to-end web platforms and AI-powered products.
               </p>
               <Button
                 className="md:w-80 md:h-16 w-60 h-12 z-100 text-sm"
@@ -75,7 +75,7 @@ const Hero = () => {
           </div>
         </figure>
       </div>
-      <AnimatedCounter />
+      {/* <AnimatedCounter /> */}
     </section>
   );
 };
