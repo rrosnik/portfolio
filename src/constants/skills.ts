@@ -149,7 +149,7 @@ export const allSkills: Record<SkillName, SkillData> = {
   arcjet: {
     label: "Arcjet",
     homePage: "https://arcjet.com/",
-    icon: "/images/skills/nodemon.svg",
+    icon: "/images/skills/arcjet.svg",
   },
   neon: {
     label: "Neon",

@@ -29,10 +29,10 @@ const words = [
 ];
 
 const counterItems = [
-  { value: 15, suffix: "+", label: "Years of Experience" },
-  { value: 200, suffix: "+", label: "Satisfied Clients" },
-  { value: 108, suffix: "+", label: "Completed Projects" },
-  { value: 90, suffix: "%", label: "Client Retention Rate" },
+  { value: 4, suffix: "+", label: "Years of Experience" },
+  { value: 8, suffix: "+", label: "Projects Delivered" },
+  { value: 3, suffix: "", label: "Programming Languages" },
+  { value: 25, suffix: "+", label: "Tools & Technologies" },
 ];
 
 const logoIconsList = [
@@ -110,12 +110,25 @@ const techStackIcons = [
   },
 ];
 
+// Generic initials placeholders — the original template's exp/logo images were
+// real third-party brand logos (Hostinger, Appwrite, Docker) that don't belong
+// to these employers, so we render neutral badges instead.
+const orgBadge = (initials: string) =>
+  `data:image/svg+xml,${encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"><rect width="50" height="50" rx="25" fill="#1c1c21"/><text x="50%" y="56%" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="600" fill="#d9ecff">${initials}</text></svg>`,
+  )}`;
+
+const orgBanner = (label: string) =>
+  `data:image/svg+xml,${encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="180" height="40"><rect width="180" height="40" rx="8" fill="#1c1c21"/><text x="50%" y="63%" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="600" fill="#d9ecff">${label}</text></svg>`,
+  )}`;
+
 const expCards = [
   {
     review:
       "Designed and delivered a production BIM–LCA platform for the National Research Council Canada, owning architecture, implementation, and deployment across the full stack.",
-    imgPath: "/images/exp1.png",
-    logoPath: "/images/logo1.png",
+    imgPath: orgBanner("University of Ottawa"),
+    logoPath: orgBadge("UO"),
     title: "Full-Stack Developer (Research) — University of Ottawa",
     date: "May 2023 - Dec 2025",
     responsibilities: [
@@ -129,8 +142,8 @@ const expCards = [
   {
     review:
       "Led development of a new web application from 10% to 55% completion after joining, mentoring junior developers and providing technical guidance through code reviews.",
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/logo2.png",
+    imgPath: orgBanner("Viratarhe Farda Co."),
+    logoPath: orgBadge("VF"),
     title: "Full-Stack Developer — Viratarhe Farda Co.",
     date: "Jan 2022 - Aug 2022",
     responsibilities: [
@@ -142,8 +155,8 @@ const expCards = [
   {
     review:
       "Built the backend architecture of a website from the ground up and delivered clean, well-tested frontend components for the tourism agency's public site.",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
+    imgPath: orgBanner("Fotros Tourist Agency"),
+    logoPath: orgBadge("FT"),
     title: "Full-Stack Developer — Fotros Tourist Agency",
     date: "Aug 2020 - Jan 2021",
     responsibilities: [
@@ -215,9 +228,9 @@ const testimonials = [
 
 const socialImgs = [
   {
-    name: "insta",
-    imgPath: "/images/insta.png",
-    url: "#",
+    name: "github",
+    imgPath: "/images/github.svg",
+    url: "https://github.com/rrosnik",
   },
   {
     name: "fb",

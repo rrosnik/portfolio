@@ -116,7 +116,7 @@ const ContactSection = () => {
                   <div className="cta-button group">
                     <div className="bg-circle" />
                     <p className="text">
-                      {isLoading ? "Sending ..." : "SendMessage"}
+                      {isLoading ? "Sending ..." : "Send Message"}
                     </p>
                     {!isLoading && (
                       <div className="arrow-wrapper">

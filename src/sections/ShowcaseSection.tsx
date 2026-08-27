@@ -30,6 +30,9 @@ const ExternalLinkIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const FALLBACK_PROJECT_IMAGE =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%230e0e10'/%3E%3Ctext x='50%25' y='50%25' fill='%23d9ecff' font-family='sans-serif' font-size='16' text-anchor='middle' dominant-baseline='middle'%3EPreview coming soon%3C/text%3E%3C/svg%3E";
+
 const ShowcaseSection = () => {
   const sectionRef = useRef(null);
 
@@ -82,6 +85,10 @@ const ShowcaseSection = () => {
                 className="rounded-xl aspect-video object-cover object-top"
                 src={project.imageUrl}
                 alt={project.label}
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = FALLBACK_PROJECT_IMAGE;
+                }}
               />
               <div className="flex flex-wrap gap-2 bottom-2 left-2 bg-white/40 p-2 rounded-2xl w-full">
                 {project.skills.map((s) => {

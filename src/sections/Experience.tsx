@@ -32,7 +32,6 @@ const Experience = () => {
         start: "top center",
         end: "70% center",
         onUpdate: (self) => {
-          console.log(self.progress)
           gsap.to(".timeline", {
             scaleY: 1 - self.progress,
           });
