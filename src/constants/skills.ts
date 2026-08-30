@@ -27,6 +27,16 @@ export const skillNames = [
   "dotenv",
   "html",
   "stream",
+  "trpc",
+  "tanstack-query",
+  "better-auth",
+  "radix",
+  "recharts",
+  "postgresql",
+  "web-ifc",
+  "three.js",
+  "inngest",
+  "resend",
 ] as const;
 
 export const allSkills: Record<SkillName, SkillData> = {
@@ -193,5 +203,55 @@ export const allSkills: Record<SkillName, SkillData> = {
     label: "HTML",
     homePage: "https://developer.mozilla.org/en-US/docs/Web/HTML",
     icon: "/images/skills/html.svg",
+  },
+  trpc: {
+    label: "tRPC",
+    homePage: "https://trpc.io/",
+    icon: "/images/skills/trpc.svg",
+  },
+  "tanstack-query": {
+    label: "TanStack Query",
+    homePage: "https://tanstack.com/query",
+    icon: "/images/skills/tanstack-query.svg",
+  },
+  "better-auth": {
+    label: "better-auth",
+    homePage: "https://www.better-auth.com/",
+    icon: "/images/skills/better-auth.svg",
+  },
+  radix: {
+    label: "Radix UI",
+    homePage: "https://www.radix-ui.com/",
+    icon: "/images/skills/radix.svg",
+  },
+  recharts: {
+    label: "Recharts",
+    homePage: "https://recharts.org/",
+    icon: "/images/skills/recharts.svg",
+  },
+  postgresql: {
+    label: "PostgreSQL",
+    homePage: "https://www.postgresql.org/",
+    icon: "/images/skills/postgresql.svg",
+  },
+  "web-ifc": {
+    label: "web-ifc",
+    homePage: "https://github.com/ThatOpen/engine_web-ifc",
+    icon: "/images/skills/web-ifc.svg",
+  },
+  "three.js": {
+    label: "Three.js",
+    homePage: "https://threejs.org/",
+    icon: "/images/skills/threejs.svg",
+  },
+  inngest: {
+    label: "Inngest",
+    homePage: "https://www.inngest.com/",
+    icon: "/images/skills/inngest.svg",
+  },
+  resend: {
+    label: "Resend",
+    homePage: "https://resend.com/",
+    icon: "/images/skills/resend.svg",
   },
 };

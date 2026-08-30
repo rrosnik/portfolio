@@ -16,14 +16,27 @@ const skillCategories: { title: string; skills: SkillName[] }[] = [
       "vite",
       "tailwindcss",
       "shadcn",
+      "radix",
       "typescript",
       "html",
       "zustand",
+      "recharts",
+      "three.js",
+      "web-ifc",
     ],
   },
   {
     title: "Backend",
-    skills: ["express", "drizzle", "neon"],
+    skills: [
+      "express",
+      "drizzle",
+      "neon",
+      "postgresql",
+      "trpc",
+      "tanstack-query",
+      "inngest",
+      "resend",
+    ],
   },
   {
     title: "Real-Time & Collaboration",
@@ -31,7 +44,7 @@ const skillCategories: { title: string; skills: SkillName[] }[] = [
   },
   {
     title: "Auth & Security",
-    skills: ["clerk", "jwt", "arcjet"],
+    skills: ["clerk", "jwt", "arcjet", "better-auth"],
   },
   {
     title: "DevOps & Testing",

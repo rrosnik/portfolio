@@ -1,10 +1,11 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects } from "../constants";
 import { cn } from "../lib/utils";
 import { allSkills } from "../constants/skills";
+import ProjectGallery from "../components/ProjectGallery";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,11 +31,43 @@ const ExternalLinkIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const LockIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1.8}
+    className={className}
+  >
+    <rect x="4.5" y="10.5" width="15" height="9" rx="1.5" />
+    <path strokeLinecap="round" d="M7.5 10.5V7a4.5 4.5 0 0 1 9 0v3.5" />
+  </svg>
+);
+
+const ExpandIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1.8}
+    className={className}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"
+    />
+  </svg>
+);
+
 const FALLBACK_PROJECT_IMAGE =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%230e0e10'/%3E%3Ctext x='50%25' y='50%25' fill='%23d9ecff' font-family='sans-serif' font-size='16' text-anchor='middle' dominant-baseline='middle'%3EPreview coming soon%3C/text%3E%3C/svg%3E";
 
 const ShowcaseSection = () => {
   const sectionRef = useRef(null);
+  const [galleryProject, setGalleryProject] = useState<PortfolioProject | null>(
+    null,
+  );
 
   useGSAP(() => {
     gsap.fromTo(
@@ -81,15 +114,34 @@ const ShowcaseSection = () => {
                 // index === 0 && "col-span-2 row-span-2",
               )}
             >
-              <img
-                className="rounded-xl aspect-video object-cover object-top"
-                src={project.imageUrl}
-                alt={project.label}
-                onError={(e) => {
-                  e.currentTarget.onerror = null;
-                  e.currentTarget.src = FALLBACK_PROJECT_IMAGE;
-                }}
-              />
+              <button
+                type="button"
+                onClick={() => setGalleryProject(project)}
+                aria-label={`View ${project.label} gallery`}
+                className="group relative block w-full cursor-pointer appearance-none overflow-hidden rounded-xl border-0 bg-transparent p-0 text-left"
+              >
+                <img
+                  className="aspect-video rounded-xl object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  src={project.imageUrl}
+                  alt={project.label}
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = FALLBACK_PROJECT_IMAGE;
+                  }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/40 group-hover:opacity-100">
+                  <ExpandIcon className="size-8 text-white" />
+                </div>
+                {project.accessNote && (
+                  <span
+                    title={project.accessNote}
+                    className="absolute left-2 top-2 flex items-center gap-1.5 rounded-full bg-black-100/90 px-3 py-1.5 text-xs font-semibold text-white-50 backdrop-blur-sm"
+                  >
+                    <LockIcon className="size-3.5" />
+                    Private / NRC Internal
+                  </span>
+                )}
+              </button>
               <div className="flex flex-wrap gap-2 bottom-2 left-2 bg-white/40 p-2 rounded-2xl w-full">
                 {project.skills.map((s) => {
                   const skill = allSkills[s];
@@ -111,29 +163,45 @@ const ShowcaseSection = () => {
               </div>
               <h2 className="font-bold">{project.label}</h2>
               <div className="flex flex-wrap items-center gap-3">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="card-border flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs text-white-50 transition-colors hover:border-white-50/50 hover:text-white"
-                >
-                  <GithubIcon className="size-3.5" />
-                  Code
-                </a>
                 {project.liveDemo ? (
                   <a
                     href={project.liveDemo}
                     target="_blank"
                     rel="noreferrer"
-                    className="card-border flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs text-white-50 transition-colors hover:border-white-50/50 hover:text-white"
+                    className="flex items-center gap-2 rounded-full bg-white-50 px-4 py-2 text-sm font-semibold text-black-100 transition-transform hover:scale-105"
                   >
-                    <ExternalLinkIcon className="size-3.5" />
+                    <ExternalLinkIcon className="size-4" />
                     Live Demo
                   </a>
                 ) : (
-                  <span className="flex cursor-not-allowed items-center gap-1.5 rounded-full border border-black-50 px-3 py-1.5 text-xs text-white-50/30">
-                    <ExternalLinkIcon className="size-3.5" />
+                  <span
+                    title={project.accessNote ?? "Live demo not available."}
+                    className="flex cursor-not-allowed items-center gap-2 rounded-full border border-dashed border-white-50/30 px-4 py-2 text-sm font-semibold text-white-50/40"
+                  >
+                    <ExternalLinkIcon className="size-4" />
                     No Live Demo
+                  </span>
+                )}
+                {project.github ? (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2 rounded-full border-2 border-white-50 px-4 py-2 text-sm font-semibold text-white-50 transition-colors hover:bg-white-50 hover:text-black-100"
+                  >
+                    <GithubIcon className="size-4" />
+                    Code
+                  </a>
+                ) : (
+                  <span
+                    title={
+                      project.accessNote ??
+                      "Source code is not publicly available."
+                    }
+                    className="flex cursor-not-allowed items-center gap-2 rounded-full border border-dashed border-white-50/30 px-4 py-2 text-sm font-semibold text-white-50/40"
+                  >
+                    <LockIcon className="size-4" />
+                    Private
                   </span>
                 )}
               </div>
@@ -142,6 +210,18 @@ const ShowcaseSection = () => {
           ))}
         </div>
       </div>
+
+      {galleryProject && (
+        <ProjectGallery
+          label={galleryProject.label}
+          images={
+            galleryProject.images && galleryProject.images.length > 0
+              ? galleryProject.images
+              : [galleryProject.imageUrl]
+          }
+          onClose={() => setGalleryProject(null)}
+        />
+      )}
     </section>
   );
 };

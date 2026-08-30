@@ -16,10 +16,13 @@ declare global {
     label: string;
     description: string;
     imageUrl: string;
+    images?: string[];
     skills: SkillName[];
     category: string;
-    github: ExternalUrl;
+    github?: ExternalUrl;
     liveDemo?: ExternalUrl;
+    /** Shown when github/liveDemo are omitted, e.g. for closed-source client/employer work. */
+    accessNote?: string;
   };
 }
 
