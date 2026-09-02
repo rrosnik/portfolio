@@ -121,7 +121,7 @@ const ShowcaseSection = () => {
                 className="group relative block w-full cursor-pointer appearance-none overflow-hidden rounded-xl border-0 bg-transparent p-0 text-left"
               >
                 <img
-                  className="aspect-video rounded-xl object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  className="aspect-video rounded-xl object-cover object-top transition-transform duration-500 group-hover:scale-105 w-full"
                   src={project.imageUrl}
                   alt={project.label}
                   onError={(e) => {
