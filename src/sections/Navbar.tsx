@@ -32,11 +32,23 @@ const Navbar = () => {
             ))}
           </ul>
         </nav>
-        <a href="#contact" className="contact-btn group">
-          <div className="inner">
-            <span>Contact me</span>
-          </div>
-        </a>
+        <div className="flex items-center gap-3">
+          <a
+            href="/Reza_Rostaminikoo_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-btn group"
+          >
+            <div className="inner">
+              <span>Resume</span>
+            </div>
+          </a>
+          <a href="#contact" className="contact-btn group">
+            <div className="inner">
+              <span>Contact me</span>
+            </div>
+          </a>
+        </div>
       </div>
     </header>
   );
